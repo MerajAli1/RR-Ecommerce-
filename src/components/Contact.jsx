@@ -5,6 +5,7 @@ import CallIcon from '@mui/icons-material/Call';
 import { TextField } from '@mui/material';
 import Navbar from './Navbar';
 import axios from 'axios';
+import {BASE_URL} from '../Api/api'
 const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -12,8 +13,6 @@ const Contact = () => {
   const [message, setMessage] = useState('')
 
   const ContactMessage = async () => {
-
-
     if (!name || !email || !number || !message) {
       alert("Fill the complete form")
     } else {
@@ -24,7 +23,7 @@ const Contact = () => {
         message
       }
       try {
-        const response = await axios.post("http://localhost:8003/api/v1/contact", Message)
+        const response = await axios.post(`${BASE_URL}/contact`, Message)
         console.log(response.data);
       } catch (error) {
         console.log(error, "ERROR");

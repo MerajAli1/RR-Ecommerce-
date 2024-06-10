@@ -58,10 +58,6 @@ const routes = [{
   name: "notification",
   path: "Notification",
   element: <Notification />
-},{
-  name: "uploadForm",
-  path: "UploadForm",
-  element: <UpdateForm />
 }
 ]
 
