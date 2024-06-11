@@ -86,7 +86,7 @@ const cartSlice = createSlice({
   reducers: {
     addCart: (state, action) => {
       const existingProductIndex = state.addToCart.findIndex(
-        (p) => p._id === action.payload._id
+        (p) => p.data._id === action.payload.id
       );
       if (existingProductIndex === -1) {
         // If the product is not in the cart, add it with count = 1
@@ -102,13 +102,13 @@ const cartSlice = createSlice({
       );
     },
     cartIncrement: (state, action) => {
-      const product = state.addToCart.find((p) => p.id === action.payload);
+      const product = state.addToCart.find((p) => p.data._id === action.payload);
       if (product) {
         product.count += 1;
       }
     },
     cartDecrement: (state, action) => {
-      const product = state.addToCart.find((p) => p.id === action.payload);
+      const product = state.addToCart.find((p) => p.data._id === action.payload);
       if (product && product.count > 1) {
         product.count -= 1;
       }

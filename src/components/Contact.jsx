@@ -6,6 +6,7 @@ import { TextField } from '@mui/material';
 import Navbar from './Navbar';
 import axios from 'axios';
 import {BASE_URL} from '../Api/api'
+import Footer from './Footer';
 const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -113,6 +114,7 @@ const Contact = () => {
           </div>
         </section>
       </div>
+      <Footer/>
     </>
   );
 }

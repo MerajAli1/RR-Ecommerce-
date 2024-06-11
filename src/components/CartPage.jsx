@@ -13,7 +13,7 @@ const CartPage = () => {
 const navigate = useNavigate()
   //global states
   const { addToCart, count } = useSelector((state) => state.addToCartReducer);
-  // console.log("addToCart Cart ", addToCart);
+  console.log("addToCart Cart ", addToCart);
 // const {count} = useSelector(state=>state.addToCartReducer)
 // console.log("selector",count);
 const dispatch = useDispatch()
@@ -41,12 +41,12 @@ const stock = 12;
                   </h4>
                 <div>
                   <button className='px-3 py-2 border-0 bg-dark text-white' onClick={() => {
-                    product.count > 1 ? dispatch(cartDecrement(product.id)) : dispatch(removeAddToCart(product))
+                    product.count > 1 ? dispatch(cartDecrement(product.data._id)) : dispatch(removeAddToCart(product))
                   }} >
                     -
                   </button>
                   <button className='ms-3 px-3 py-2 border-0 bg-dark text-white' onClick={() => {
-                   product.count < stock ? dispatch(cartIncrement(product.id)) : setCount(stock)
+                   product.count < stock ? dispatch(cartIncrement(product.data._id)) : setCount(stock)
                   }} >
                     +
                   </button>
