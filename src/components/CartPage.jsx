@@ -41,7 +41,7 @@ const stock = 12;
                   </h4>
                 <div>
                   <button className='px-3 py-2 border-0 bg-dark text-white' onClick={() => {
-                    product.count > 1 ? dispatch(cartDecrement(product.data._id)) : dispatch(removeAddToCart(product))
+                    product.count > 1 ? dispatch(cartDecrement(product.data._id)) : dispatch(removeAddToCart(product.data))
                   }} >
                     -
                   </button>
